@@ -11,9 +11,7 @@ class Solution {
             }
             
             if(hmap.containsKey(target - nums[i]) && i!= hmap.get(target-nums[i])){
-                ans[0] = i;
-                ans[1] = hmap.get(target-nums[i]);
-                break;
+                return new int[]{i, hmap.get(target-nums[i])};
             }
         }
         
