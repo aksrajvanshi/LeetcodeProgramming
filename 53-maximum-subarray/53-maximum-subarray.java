@@ -6,11 +6,13 @@ class Solution {
         
         for(int i=1; i < nums.length; i++){
             
-            if((currentScore + nums[i]) < nums[i]){
+            int newScore = currentScore + nums[i];
+            
+            if(newScore < nums[i]){
                 currentScore = nums[i];
             }
             else{
-                currentScore += nums[i];
+                currentScore = newScore;
             }
             
             maxResult = Math.max(maxResult, currentScore);
