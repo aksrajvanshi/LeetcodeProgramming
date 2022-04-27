@@ -4,9 +4,6 @@ class Solution {
     int startIdx = 0;
     
     public String longestPalindrome(String s) {
-        if(s.length() == 1){
-        	return s;
-        }
         
         for(int i=s.length()-1; i >= 0; i--){
         	findLongestPalindome(s, i, i);
