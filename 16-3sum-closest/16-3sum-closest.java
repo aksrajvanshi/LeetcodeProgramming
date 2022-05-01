@@ -11,17 +11,53 @@ class Solution {
         for(int i=0; i <= nums.length-2; i++){
             int start = nums[i];
 
-            for(int j=i+1; j < nums.length-1; j++){
-                for(int k=j+1; k < nums.length; k++){
-                    int total = start + nums[j] + nums[k];
-                    int diff = Math.abs(target - total);
-                    // System.out.println(start + " -- " + nums[j] + " -- " + nums[k] + " -- diff::" + diff);
+            int left = i+1;
+            int right = nums.length-1;
+            
+            while(left < right){
+                
+                int total = start + nums[left] + nums[right];
+                int diff = Math.abs(target - total);
+                
+                if(total == target){
+                    
+                    if(diff < minDiff){
+                        minDiff = diff;
+                        res = total;
+                        return res;
+                    }
+                }
+                else if(total > target){
+
                     if(diff < minDiff){
                         minDiff = diff;
                         res = total;
                     }
+                    right--;
                 }
+                else if(total < target){
+
+                    if(diff < minDiff){
+                        minDiff = diff;
+                        res = total;
+                    }
+                    left++;
+                }
+                
             }
+            
+            
+//             for(int j=i+1; j < nums.length-1; j++){
+//                 for(int k=j+1; k < nums.length; k++){
+//                     int total = start + nums[j] + nums[k];
+//                     int diff = Math.abs(target - total);
+
+//                     if(diff < minDiff){
+//                         minDiff = diff;
+//                         res = total;
+//                     }
+//                 }
+//             }
         }
     
         return res;
