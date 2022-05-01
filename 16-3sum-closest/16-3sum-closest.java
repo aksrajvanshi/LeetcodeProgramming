@@ -22,9 +22,7 @@ class Solution {
                 if(total == target){
                     
                     if(diff < minDiff){
-                        minDiff = diff;
-                        res = total;
-                        return res;
+                        return total;
                     }
                 }
                 else if(total > target){
@@ -45,19 +43,6 @@ class Solution {
                 }
                 
             }
-            
-            
-//             for(int j=i+1; j < nums.length-1; j++){
-//                 for(int k=j+1; k < nums.length; k++){
-//                     int total = start + nums[j] + nums[k];
-//                     int diff = Math.abs(target - total);
-
-//                     if(diff < minDiff){
-//                         minDiff = diff;
-//                         res = total;
-//                     }
-//                 }
-//             }
         }
     
         return res;
