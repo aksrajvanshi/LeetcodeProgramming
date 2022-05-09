@@ -24,9 +24,9 @@ class Solution {
         }
         
         int digit = Integer.parseInt(""+digits.charAt(idx));
-        
-        for(int j=0; j < letters[digit].length(); j++){
-            generateCombinations(digits, temp + letters[digit].charAt(j) + "", idx+1);
+        String str = letters[digit];
+        for(int j=0; j < str.length(); j++){
+            generateCombinations(digits, temp + str.charAt(j) + "", idx+1);
         }
         
         
