@@ -1,6 +1,10 @@
 class Solution {
     public int[] productExceptSelf(int[] nums) {
         
+        if(nums.length <= 1){
+            return nums;
+        }
+        
         int[] leftToRightProduct = new int[nums.length];
         leftToRightProduct[0] = nums[0];
         
