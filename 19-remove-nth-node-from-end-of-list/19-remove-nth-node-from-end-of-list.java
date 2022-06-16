@@ -11,13 +11,12 @@
 class Solution {
     
     ListNode dummy = new ListNode(-1);
-
+    ListNode fwdPtr = dummy;
+    ListNode behindPtr = dummy;
     
     public ListNode removeNthFromEnd(ListNode head, int n) {
         
         dummy.next = head;
-        ListNode fwdPtr = dummy;
-        ListNode behindPtr = dummy;
         
         int count = n;
         while(count > 0){
@@ -30,9 +29,7 @@ class Solution {
             behindPtr = behindPtr.next;
         }
         
-        ListNode nodeToDelete = behindPtr.next;
-        behindPtr.next = nodeToDelete.next;
-        nodeToDelete.next = null;
+        behindPtr.next = behindPtr.next.next;
         
         return dummy.next;
     }
