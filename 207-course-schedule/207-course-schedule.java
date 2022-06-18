@@ -23,7 +23,6 @@ class Solution {
         }
         
         List<Integer> topoSort = new ArrayList<>();
-        System.out.println("Queue before loop:: " + q);
         
         while(!q.isEmpty()){
             
@@ -39,8 +38,6 @@ class Solution {
                     }
                 }
             }
-            
-            System.out.println("Queue inside loop after iteration:: " + q);
             
         }
         
